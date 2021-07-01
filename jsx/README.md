@@ -89,12 +89,12 @@ https://github.com/facebook/create-react-app/issues/9904
 
 Manually refreshing will show the changes, also, any changes to components deeper in the file structure will cause an auto-refresh as expected.
 
-# One workaround noted suggests putting the following in the index.js which enables reloading:
+## One workaround noted suggests putting the following in the index.js which enables reloading:
 
-# Important - You must restart your server after making this change
+## Important - You must restart your server after making this change
 
 if (module.hot) {
 module.hot.accept();
 }
 
-# Note - If you have spaces in your project directory name, reloading throughout the whole application can also fail.
+## Note - If you have spaces in your project directory name, reloading throughout the whole application can also fail.
