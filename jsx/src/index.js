@@ -10,11 +10,21 @@ function getButtonText() {
 const App = () => {
   // arrow function or traditional like const App = function() { };
 
+  /* Diff between HTML and JSX 3: JSX referencing js variables */
   /* Limitations in referencing js variables:
        We are not allowed to use a js object and reference it in JSX as js objects are not valid as a React child 
        React child means showing js object inside a React component and React does not know how to handle it*/
+
   //object
   const buttonText = { text: "Click Me" };
+
+  /*
+    const style = {
+    backgroundColor: "#55f",
+    color: "#fff",
+    border: "1px solid #000",
+  };
+  */
 
   //text
   //const buttonText = [10, 20];
@@ -22,14 +32,18 @@ const App = () => {
   //const buttonText = "Click Me";
   //const buttonText = 123456;
 
+  const labelText = "Enter Name: ";
+
   return (
     /* return returns jsx code */
     <div>
       {/* This is jsx comment */}
-      {/* Diff between HTML and JSX 1: Instead of class in JSX we write className as class is a js keyword. 
+      {/* Diff between HTML and JSX 1: Instead of 'class' in JSX we write 'className' as class is a js keyword. 
           To avoid confusion, we use className since old times */}
-      <label for="name" className="label">
-        Enter Name
+      {/* Diff between HTML and JSX 4: Instead of 'for' in JSX we write 'htmlFor' as for could be read as for loop*/}
+
+      <label htmlFor="name" className="label">
+        {labelText}
       </label>
       <input id="name" type="text" />
       <button
@@ -52,8 +66,6 @@ const App = () => {
                 and just like js we have css properties written same as in js code*/}
 
       {/* half community convention and half jsx convention. put non-jsx in '' and jsx in "" */}
-
-      {/* Diff between HTML and JSX 3: JSX referencing js variables */}
     </div>
   );
   //   <div> Hi there!</div>;
