@@ -2,8 +2,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-function getButtonText() {
-  return "Click on Me!";
+// function getButtonText() {
+//   return "Click on Me!";
+// }
+
+function getTime() {
+  return new Date().toLocaleTimeString();
 }
 
 //Create a React Component
@@ -19,12 +23,12 @@ const App = () => {
   const buttonText = { text: "Click Me" };
 
   /*
-    const style = {
-    backgroundColor: "#55f",
-    color: "#fff",
-    border: "1px solid #000",
-  };
-  */
+        const style = {
+        backgroundColor: "#55f",
+        color: "#fff",
+        border: "1px solid #000",
+    };
+    */
 
   //text
   //const buttonText = [10, 20];
@@ -33,14 +37,20 @@ const App = () => {
   //const buttonText = 123456;
 
   const labelText = "Enter Name: ";
-
+  const labelText1 = "Current Time: ";
   return (
     /* return returns jsx code */
     <div>
       {/* This is jsx comment */}
+      {/*  Coding exercise 1 : display date using given function*/}
+      <label htmlFor="time" className="time">
+        {labelText1}
+      </label>
+      <input id="time" type="text" defaultValue={getTime()} />
+      <br />
       {/* Diff between HTML and JSX 1: Instead of 'class' in JSX we write 'className' as class is a js keyword. 
-          To avoid confusion, we use className since old times */}
-      {/* Diff between HTML and JSX 4: Instead of 'for' in JSX we write 'htmlFor' as for could be read as for loop*/}
+                    To avoid confusion, we use className since old times */}
+      {/* Diff between HTML and JSX 4: Instead of 'for' in JSX we write 'htmlFor' as for could be read as for() loop*/}
 
       <label htmlFor="name" className="label">
         {labelText}
@@ -55,15 +65,15 @@ const App = () => {
       >
         {/* {getButtonText()} */}
         {/* {} not indicating js object, instead it means we want to reference a js variable here.  */}
-        {buttonText.text}{" "}
+        {buttonText.text}
         {/** correct way to get js object by calling its property */}
         {/* Submit */}
       </button>
 
       {/* Diff between HTML and JSX 2:Converting inline style to JSX format
-          first {} states that we want to reference a js variable inside our jsx */}
+                    first {} states that we want to reference a js variable inside our jsx */}
       {/* second {} states that we want to add a js object having keys and values, 
-                and just like js we have css properties written same as in js code*/}
+                            and just like js we have css properties written same as in js code*/}
 
       {/* half community convention and half jsx convention. put non-jsx in '' and jsx in "" */}
     </div>
