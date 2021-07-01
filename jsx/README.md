@@ -68,3 +68,33 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### The recommended method for generating a project is now:
+
+npx create-react-app my-app
+
+If you get any errors about missing templates or how a global Create React App install is no longer supported even when using this command, you likely need to remove the global package from your system:
+
+npm uninstall -g create-react-app
+
+- Note - some students have mentioned that an extra step was needed for Mac / Linux users to manually delete the folder:
+
+rm -rf /usr/local/bin/create-react-app
+
+### Important Note about Live Reloading
+
+There appears to be an issue in CRA in regards to fast refresh when code changes are made to the index.js file:
+
+https://github.com/facebook/create-react-app/issues/9904
+
+Manually refreshing will show the changes, also, any changes to components deeper in the file structure will cause an auto-refresh as expected.
+
+# One workaround noted suggests putting the following in the index.js which enables reloading:
+
+# Important - You must restart your server after making this change
+
+if (module.hot) {
+module.hot.accept();
+}
+
+# Note - If you have spaces in your project directory name, reloading throughout the whole application can also fail.
