@@ -3,53 +3,24 @@ import React from "react";
 import ReactDOM from "react-dom";
 //import faker
 import faker from "faker";
+//import CommentDetail
+import CommentDetail from "./CommentDetail"; // done by webpack to search file ending the .js for you
 
 //Create a React Component
 const App = () => {
+  //Parent Component
+  //Props - System for passing data from a PARENT Component to a CHILD Component to customize/configure a CHILD Component
+  // customize how the component look or how the user interacts with them
   return (
     <div className="ui container comments">
-      <div className="comment">
-        <a href="/" className="avatar">
-          <img alt="avatar" src={faker.image.avatar()} />
-        </a>
-        <div className="content">
-          <a href="/" className="author">
-            {faker.name.firstName()}
-          </a>
-          <div className="metadata">
-            <span className="date">Today at 6:00 PM</span>
-          </div>
-          <div className="text">Nice Blog Post!</div>
-        </div>
-      </div>
-      <div className="comment">
-        <a href="/" className="avatar">
-          <img alt="avatar" src={faker.image.avatar()} />
-        </a>
-        <div className="content">
-          <a href="/" className="author">
-            {faker.name.firstName()}
-          </a>
-          <div className="metadata">
-            <span className="date">Today at 6:00 PM</span>
-          </div>
-          <div className="text">Nice Blog Post!</div>
-        </div>
-      </div>
-      <div className="comment">
-        <a href="/" className="avatar">
-          <img alt="avatar" src={faker.image.avatar()} />
-        </a>
-        <div className="content">
-          <a href="/" className="author">
-            {faker.name.firstName()}
-          </a>
-          <div className="metadata">
-            <span className="date">Today at 6:00 PM</span>
-          </div>
-          <div className="text">Nice Blog Post!</div>
-        </div>
-      </div>
+      {/* if using component inside a component, it has to be called as JSX tag like HTML element tag. */}
+      {/* Child/Nested components: */}
+      <CommentDetail />
+      <CommentDetail />
+      <CommentDetail />
+      <CommentDetail />
+      <CommentDetail />
+      <CommentDetail />
     </div>
   );
 };
