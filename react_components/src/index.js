@@ -9,7 +9,7 @@ import CommentDetail from "./CommentDetail"; // done by webpack to search file e
 //Create a React Component
 const App = () => {
   //Parent Component
-  //Props - System for passing data from a PARENT Component to a CHILD Component to customize/configure a CHILD Component
+  //Props/properties - System for passing data from a PARENT Component to a CHILD Component to customize/configure a CHILD Component
   // customize how the component look or how the user interacts with them
   return (
     <div className="ui container comments">
