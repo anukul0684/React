@@ -5,6 +5,7 @@ import ReactDOM from "react-dom";
 import faker from "faker";
 //import CommentDetail
 import CommentDetail from "./CommentDetail"; // done by webpack to search file ending the .js for you
+import ApprovalCard from "./ApprovalCard";
 
 //Create a React Component
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
     <div className="ui container comments">
       {/* if using component inside a component, it has to be called as JSX tag like HTML element tag. */}
       {/* Child/Nested components: */}
+      <ApprovalCard />
       <CommentDetail
         authorImage={faker.image.avatar()}
         author="Sam"
