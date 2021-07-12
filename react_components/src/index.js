@@ -23,7 +23,7 @@ const App = () => {
           </div>
         </ApprovalCard>
       </div>
-      <div className="four wide column">
+      <div className="five wide column">
         <ApprovalCard>
           <CommentDetail
             authorImage={faker.image.avatar()}
@@ -33,7 +33,7 @@ const App = () => {
           />
         </ApprovalCard>
       </div>
-      <div className="four wide column">
+      <div className="five wide column">
         <ApprovalCard>
           <CommentDetail
             authorImage={faker.image.avatar()}
@@ -43,7 +43,7 @@ const App = () => {
           />
         </ApprovalCard>
       </div>
-      <div className="four wide column">
+      <div className="five wide column">
         <ApprovalCard>
           <CommentDetail
             authorImage={faker.image.avatar()}
@@ -53,7 +53,7 @@ const App = () => {
           />
         </ApprovalCard>
       </div>
-      <div className="four wide column">
+      <div className="five wide column">
         <ApprovalCard>
           <CommentDetail
             authorImage={faker.image.avatar()}
@@ -63,7 +63,7 @@ const App = () => {
           />
         </ApprovalCard>
       </div>
-      <div className="four wide column">
+      <div className="five wide column">
         <ApprovalCard>
           <CommentDetail
             authorImage={faker.image.avatar()}
@@ -73,7 +73,7 @@ const App = () => {
           />
         </ApprovalCard>
       </div>
-      <div className="four wide column">
+      <div className="five wide column">
         <ApprovalCard>
           <CommentDetail
             authorImage={faker.image.avatar()}
