@@ -24,19 +24,30 @@ class App extends React.Component {
 
     super(props);
 
+    //this is the only time we do direct assignment to this.state. After this use setState() to do the change, update or manipulate our this.state object's property.
     this.state = {
       latitude: null, //default it to a sensible value which is here is a number
     };
+
     // this.state ={} is our state object that is going to eventually contain some different pieces of data and some different property that are very imp and relevant to our component that we are putting together
+
+    // putting this function here instead of render() to avoid multiple times calling as render is called many times.
+    window.navigator.geolocation.getCurrentPosition(
+      (position) => {
+        //console.log(position)
+        //we call setState
+        this.setState({ latitude: position.coords.latitude });
+
+        //never ever do this below thing
+        //this.state.latitude = position.coords.latitude;
+      }, //gets the latitude and longitude
+      (err) => console.log(err) //gets the error message when unable to find geo location
+    );
   }
 
   //React says we have to define render!! to return jsx
   render() {
-    window.navigator.geolocation.getCurrentPosition(
-      (position) => console.log(position), //gets the latitude and longitude
-      (err) => console.log(err) //gets the error message when unable to find geo location
-    );
-    return <div>Latitude: </div>;
+    return <div>Latitude: {this.state.latitude}</div>;
   }
 }
 
