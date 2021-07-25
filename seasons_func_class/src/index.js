@@ -55,6 +55,16 @@ class App extends React.Component {
     );
   }
 
+  //componentDidMount() is called one time immediately after the render() method is called when the component instance is created
+  // componentDidMount() {
+  //   console.log("My component was rendered to the screen");
+  // }
+
+  //componentDidUpdate() is called everytime after the re-render occurs. So technically render() method sits before this method.
+  // componentDidUpdate() {
+  //   console.log("My component got updated - it re-rendered");
+  // }
+
   //React says we have to define render!! to return jsx
   render() {
     // return (
