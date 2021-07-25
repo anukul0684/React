@@ -1,0 +1,11 @@
+POST https://profile.ayntechnologies.com/wp-json/wp/v2/posts
+Authorization: Basic base64-user-password profile_admin password
+Content-Type: application/json
+
+
+{
+    "title":"A Post created via the REST API!",
+    "content": "This is the content of the post created with REST API!!",
+    "status": "publish",
+    "author": 1
+}

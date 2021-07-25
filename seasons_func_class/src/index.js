@@ -27,6 +27,8 @@ class App extends React.Component {
     //this is the only time we do direct assignment to this.state. After this use setState() to do the change, update or manipulate our this.state object's property.
     this.state = {
       latitude: null, //default it to a sensible value which is here is a number
+      longitude: null,
+      errorMessage: "",
     };
 
     // this.state ={} is our state object that is going to eventually contain some different pieces of data and some different property that are very imp and relevant to our component that we are putting together
@@ -37,17 +39,59 @@ class App extends React.Component {
         //console.log(position)
         //we call setState
         this.setState({ latitude: position.coords.latitude });
+        this.setState({ longitude: position.coords.longitude });
 
         //never ever do this below thing
         //this.state.latitude = position.coords.latitude;
       }, //gets the latitude and longitude
-      (err) => console.log(err) //gets the error message when unable to find geo location
+      (err) => {
+        console.log(err); //gets the error message when unable to find geo location
+        this.setState({
+          errorMessage:
+            err.message +
+            " Some Error Occurred. We are sorry. We are unable to provide Latitude and Longitude this moment.",
+        });
+      }
     );
   }
 
   //React says we have to define render!! to return jsx
   render() {
-    return <div>Latitude: {this.state.latitude}</div>;
+    // return (
+    //   <div>
+    //     <h1>Latitude: {this.state.latitude}</h1>
+    //     <h2>Longitude: {this.state.longitude}</h2>
+
+    //     <h3 style={{ color: "#f00" }}>Error: {this.state.errorMessage}</h3>
+    //   </div>
+    // );
+    if (
+      this.state.errorMessage &&
+      !(this.state.latitude || this.state.longitude)
+    ) {
+      return (
+        <div>
+          <h3 style={{ color: "#f00" }}>Error: {this.state.errorMessage}</h3>
+        </div>
+      );
+    }
+    if (
+      !this.state.errorMessage &&
+      (this.state.latitude || this.state.longitude)
+    ) {
+      return (
+        <div>
+          <h1>Latitude: {this.state.latitude}</h1>
+          <h1>Longitude: {this.state.longitude}</h1>
+        </div>
+      );
+    }
+
+    return (
+      <div>
+        <h1>Page is Loading. Please wait...</h1>
+      </div>
+    );
   }
 }
 
